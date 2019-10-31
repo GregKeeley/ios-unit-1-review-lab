@@ -38,6 +38,34 @@ establishment of an absolute Tyranny over these States. To prove this, let Facts
 candid world.
 """
 ```
+Answer
+```swift
+var declarationWithoutLineBreaks = declarationOfIndependence.replacingOccurrences(of: "\n", with: " ")
+var declarationWithoutSpaces = declarationWithoutLineBreaks.replacingOccurrences(of: " ", with: ".")
+var declarationArray = declarationWithoutSpaces.components(separatedBy: CharacterSet.punctuationCharacters)
+var declarationWordsOver5Char = [String]()
+var declarationLargeWordCount: [String: Int] = [:]
+
+
+print(declarationArray)
+print(declarationArray.count)
+
+for word in declarationArray {
+    if word.count > 5 {
+        declarationWordsOver5Char.append(word)
+    }
+}
+
+for word in declarationWordsOver5Char {
+    if !declarationLargeWordCount.contains(where: { ((key: word, value: Int)) -> Bool in
+        declarationLargeWordCount = key.word
+        declarationLargeWordCount += value.1
+    }) {
+
+    }
+}
+```
+
 
 ## Question 2
 
